@@ -1,3 +1,9 @@
+% Training EEG data using DBN
+%
+% Written by Giyoung Jeon
+% Probabilistic Artificial Intelligence Lab at UNIST
+% v1.0 July, 2nd, 2015
+
 addpath(genpath('./'));
 train_path = '../Dataset/EEG_detection/train/';
 data_list = {};
@@ -15,6 +21,7 @@ rand_idx = randperm(12*8);
 x_dim = 32;
 y_dim = 6;
 disp('dbn setup...');
+model = cell(1,y_dim);
 for cidx = 1:y_dim
     dbn.sizes = [100 100];
     opts.numepochs =   10;
